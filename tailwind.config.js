@@ -5,8 +5,20 @@ export default {
     extend: {
       fontFamily: {
         poppins: "'Poppins', sans-serif"
-      }
+      },
+
+      colors: {
+        'blue': '#1fb6ff',
+        'pink': '#D72050',
+        'orange': '#ff7849',
+        'green': '#13ce66',
+        'gray-dark': '#273444',
+        'gray': '#8492a6',
+        'gray-light': '#F3F3F3',
+      },
     }
+
+    
   },
   plugins: [require("daisyui")],
 };
