@@ -12,7 +12,7 @@ export default {
         'pink': '#D72050',
         'orange': '#ff7849',
         'green': '#13ce66',
-        'gray-dark': '#273444',
+        'gray-dark':'#403F3F',
         'gray': '#8492a6',
         'gray-light': '#F3F3F3',
       },
