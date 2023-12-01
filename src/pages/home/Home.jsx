@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../shared/Header';
 import Slider from './Slider';
-import Navbar from './Navbar';
+import Navbar from '../../shared/Navbar';
 
 const Home = () => {
     return (

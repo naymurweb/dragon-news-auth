@@ -1,7 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import user from "../../assets/user.png";
-import PinkBtn from "../../shared/PinkBtn";
+import { Link, NavLink } from "react-router-dom";
+import user from "../assets/user.png";
 
 const Navbar = () => {
   const linkItems = (
@@ -55,9 +54,11 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button className=" text-white bg-gray-dark py-3 px-8 text-lg font-medium">
+           <Link to={'/login'}>
+           <button className=" text-white bg-gray-dark py-3 px-8 text-lg font-medium">
               Login
             </button>
+           </Link>
           </div>
         </div>
       </div>
