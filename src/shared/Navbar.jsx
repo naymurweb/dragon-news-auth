@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import user from "../assets/user.png";
+import user1 from "../assets/user.png";
+import { mainContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOutUser } = useContext(mainContext);
+  const handleLogout = () => {
+    logOutUser()
+      .then(() => {
+        console.log("logout user");
+      })
+      .catch((error) => console.log(error));
+  };
   const linkItems = (
     <>
       <li>
@@ -48,17 +57,28 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="flex gap-3 items-center">
             <div>
-              <div className="avatar">
-                <div className="w-10 rounded-full ring ring-black ring-offset-base-100 ring-offset-2">
-                  <img src={user} />
+              {user && (
+                <div className="avatar">
+                  <div className="w-10 rounded-full ring ring-black ring-offset-base-100 ring-offset-2">
+                    <img src={user1} />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
-           <Link to={'/login'}>
-           <button className=" text-white bg-gray-dark py-3 px-8 text-lg font-medium">
-              Login
-            </button>
-           </Link>
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className=" text-white bg-gray-dark py-3 px-8 text-lg font-medium"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link to={"/login"}>
+                <button className=" text-white bg-gray-dark py-3 px-8 text-lg font-medium">
+                  Login
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
